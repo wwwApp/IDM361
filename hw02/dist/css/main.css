@@ -1,0 +1,96 @@
+.l-wrapper {
+  width: 320px;
+  margin: 100px auto;
+}
+
+.c-candle {
+  width: 100px;
+  margin: 20px auto;
+  padding-top: 50px;
+}
+
+.c-output {
+  text-align: center;
+}
+
+@media only screen and (orientation: portrait) {
+  body {
+    background-color: #dcf5f5;
+  }
+
+  .c-output::after {
+    content: "Portrait Mode";
+  }
+
+  .c-candle {
+    position: relative;
+  }
+
+  .candle-lighting {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background-color: rgba(236, 196, 123, 0.644);
+    position: absolute;
+    z-index: -1;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    animation: grow 0.75s linear infinite alternate;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: #d3d3d4;
+  }
+
+  .c-output::after {
+    content: "Landscape Mode";
+  }
+
+  .c-candle {
+    animation: fall 0.5s linear forwards;
+  }
+
+  .candle-flame {
+	  animation: fade linear 0.5s forwards;
+  }
+}
+
+/* Animations */
+
+@keyframes grow {
+  from {
+    width: 50px;
+    height: 50px;
+  }
+  to {
+    width: 65px;
+    height: 65px;
+    border-radius: 40px;
+    background-color: rgba(236, 196, 123, 0.445);
+    top: 30px;
+  }
+}
+
+@keyframes fall {
+  from {
+	transform: rotate(-20deg);
+	transform-origin: bottom;
+  }
+  to {
+	transform: rotate(-85deg);
+	transform-origin: bottom;
+  }
+}
+
+@keyframes fade {
+	to {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IDM361 HW05 | 1 to 100</title>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!--
+      Sets the style of the status bar for a web application. Values ['black', 'default', 'black-translucent']
+    -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- Make the app title different than the page title. -->
+    <meta name="apple-mobile-web-app-title" content="1 to 100" />
+
+    <!-- Disable automatic phone number detection. -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Apple Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="dist/img/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="dist/img/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="dist/img/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="dist/img/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="dist/img/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="dist/img/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="dist/img/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="dist/img/apple-touch-icon-180x180.png"
+    />
+
+    <!-- Splash Screen -->
+    <link rel="apple-touch-startup-image" href="dist/img/splash-screen.jpg" />
+
+    <!-- Web Font & CSS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow:300,400,500"
+      rel="stylesheet"
+    />
+    <link href="dist/css/normalize.css" rel="stylesheet" />
+    <link href="dist/css/add2home.css" rel="stylesheet" />
+    <link href="dist/css/app.css" rel="stylesheet" />
+  </head>
+
+  <body class="c-body">
+    <!-- Portrait View -->
+    <div class="l-orientation--portrait c-page">
+      <main class="l-wrapper c-main">
+        <div class="c-score">
+          <p class="c-score--title">your concentration history</p>
+          <div class="c-score--info">
+            <p class="c-score--info--today">today</p>
+            <p class="c-score--info--record">01:55</p>
+          </div>
+        </div>
+        <ul class="c-rank">
+          <li class="c-rank__item c-rank--first shadow button">
+            <p class="c-rank__item__date">09/10/18</p>
+            <p class="c-rank__item__record">02:10</p>
+          </li>
+          <li class="c-rank__item c-rank--second shadow button">
+            <p class="c-rank__item__date">09/11/18</p>
+            <p class="c-rank__item__record">01:21</p>
+          </li>
+          <li class="c-rank__item c-rank--third shadow button">
+            <p class="c-rank__item__date">09/12/18</p>
+            <p class="c-rank__item__record">00:58</p>
+          </li>
+          <li class="c-rank__item c-rank--fourth shadow button">
+            <p class="c-rank__item__date">09/13/18</p>
+            <p class="c-rank__item__record">04:00</p>
+          </li>
+        </ul>
+        <div class="c-score-menu">
+          <svg
+            onclick="routeTo('index.html')"
+            class="c-score-menu--return c-menu--return button"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            id="Capa_1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 47.971 47.971"
+            style="enable-background:new 0 0 47.971 47.971;"
+            xml:space="preserve"
+            width="512px"
+            height="512px"
+          >
+            <g>
+              <path
+                d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88   c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242   C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879   s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"
+                fill="#717070"
+              />
+            </g>
+          </svg>
+        </div>
+      </main>
+    </div>
+
+    <!-- Landscape View -->
+    <div class="l-orientation--landscape">
+      <h2>please rotate your device to begin the game!</h2>
+      <div class="c-rotating-anim">
+        <svg
+          class="c-rotating-anim__group"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 340 340"
+        >
+          <circle cx="170" cy="170" r="160" stroke="#69D7C7" />
+          <circle cx="170" cy="170" r="135" stroke="#FC6061" />
+          <circle cx="170" cy="170" r="110" stroke="#7E4E76" />
+        </svg>
+      </div>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script>
+      // Customize config var BEFORE loading add2Home.js
+      var addToHomeConfig = {
+        touchIcon: true
+      };
+    </script>
+    <script src="dist/js/add2home.js"></script>
+    <script src="dist/js/app.js"></script>
+  </body>
+</html>
