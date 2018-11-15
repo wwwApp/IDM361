@@ -66,7 +66,36 @@
     />
 
     <!-- Splash Screen -->
-    <link rel="apple-touch-startup-image" href="dist/img/splash-screen.jpg" />
+    <link
+      href="dist/img/splashscreens/iphone5_splash.png"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphone6_splash.png"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphoneplus_splash.png"
+      media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphonex_splash.png"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphonexr_splash.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphonexsmax_splash.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
 
     <!-- Web Font & CSS -->
     <link
@@ -244,8 +273,12 @@
           </p>
         </div>
         <ul class="c-home-menu">
-          <li class="c-home-menu__item button" onclick="routeTo('play.html')">play</li>
-          <li class="c-home-menu__item button" onclick="routeTo('score.html')">score</li>
+          <li class="c-home-menu__item button" onclick="routeTo('play.html')">
+            play
+          </li>
+          <li class="c-home-menu__item button" onclick="routeTo('score.html')">
+            score
+          </li>
         </ul>
       </main>
     </div>
@@ -254,11 +287,15 @@
     <div class="l-orientation--landscape">
       <h2>please rotate your device to begin the game!</h2>
       <div class="c-rotating-anim">
-          <svg class="c-rotating-anim__group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340">
-              <circle cx="170" cy="170" r="160" stroke="#69D7C7" />
-              <circle cx="170" cy="170" r="135" stroke="#FC6061" />
-              <circle cx="170" cy="170" r="110" stroke="#7E4E76" />
-          </svg>
+        <svg
+          class="c-rotating-anim__group"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 340 340"
+        >
+          <circle cx="170" cy="170" r="160" stroke="#69D7C7" />
+          <circle cx="170" cy="170" r="135" stroke="#FC6061" />
+          <circle cx="170" cy="170" r="110" stroke="#7E4E76" />
+        </svg>
       </div>
     </div>
     <!-- JAVASCRIPT -->
