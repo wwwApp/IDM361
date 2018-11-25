@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IDM361 HW05 | 1 to 100</title>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!--
+      Sets the style of the status bar for a web application. Values ['black', 'default', 'black-translucent']
+    -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- Make the app title different than the page title. -->
+    <meta name="apple-mobile-web-app-title" content="1 to 100" />
+
+    <!-- Disable automatic phone number detection. -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Apple Icons -->
+    <link rel="shortcut icon" href="dist/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="dist/img/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="dist/img/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="dist/img/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="dist/img/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="dist/img/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="dist/img/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="dist/img/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="dist/img/apple-touch-icon-180x180.png"
+    />
+
+    <!-- Splash Screen -->
+    <link
+      href="dist/img/splashscreens/iphone5_splash.png"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphone6_splash.png"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphoneplus_splash.png"
+      media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphonex_splash.png"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphonexr_splash.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="dist/img/splashscreens/iphonexsmax_splash.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+
+    <!-- Web Font & CSS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow:300,400,500"
+      rel="stylesheet"
+    />
+    <link href="dist/css/normalize.css" rel="stylesheet" />
+    <link href="dist/css/add2home.css" rel="stylesheet" />
+    <link href="dist/css/app.css" rel="stylesheet" />
+  </head>
+
+  <body class="c-body">
+    <!-- Portrait View -->
+    <div class="l-orientation--portrait c-page">
+      <main class="l-wrapper c-main">
+        <div class="c-logo">
+          <svg
+            class="c-logo--image"
+            width="261px"
+            height="85px"
+            viewBox="0 0 261 85"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs>
+              <rect id="path-1" x="0" y="0" width="78" height="78"></rect>
+              <filter
+                x="-4.5%"
+                y="-4.5%"
+                width="114.1%"
+                height="114.1%"
+                filterUnits="objectBoundingBox"
+                id="filter-2"
+              >
+                <feOffset
+                  dx="2"
+                  dy="2"
+                  in="SourceAlpha"
+                  result="shadowOffsetOuter1"
+                ></feOffset>
+                <feGaussianBlur
+                  stdDeviation="1.5"
+                  in="shadowOffsetOuter1"
+                  result="shadowBlurOuter1"
+                ></feGaussianBlur>
+                <feColorMatrix
+                  values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.270437047 0"
+                  type="matrix"
+                  in="shadowBlurOuter1"
+                ></feColorMatrix>
+              </filter>
+              <rect id="path-3" x="88" y="0" width="78" height="78"></rect>
+              <filter
+                x="-4.5%"
+                y="-4.5%"
+                width="114.1%"
+                height="114.1%"
+                filterUnits="objectBoundingBox"
+                id="filter-4"
+              >
+                <feOffset
+                  dx="2"
+                  dy="2"
+                  in="SourceAlpha"
+                  result="shadowOffsetOuter1"
+                ></feOffset>
+                <feGaussianBlur
+                  stdDeviation="1.5"
+                  in="shadowOffsetOuter1"
+                  result="shadowBlurOuter1"
+                ></feGaussianBlur>
+                <feColorMatrix
+                  values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.270437047 0"
+                  type="matrix"
+                  in="shadowBlurOuter1"
+                ></feColorMatrix>
+              </filter>
+              <rect id="path-5" x="176" y="0" width="78" height="78"></rect>
+              <filter
+                x="-4.5%"
+                y="-4.5%"
+                width="114.1%"
+                height="114.1%"
+                filterUnits="objectBoundingBox"
+                id="filter-6"
+              >
+                <feOffset
+                  dx="2"
+                  dy="2"
+                  in="SourceAlpha"
+                  result="shadowOffsetOuter1"
+                ></feOffset>
+                <feGaussianBlur
+                  stdDeviation="1.5"
+                  in="shadowOffsetOuter1"
+                  result="shadowBlurOuter1"
+                ></feGaussianBlur>
+                <feColorMatrix
+                  values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.270437047 0"
+                  type="matrix"
+                  in="shadowBlurOuter1"
+                ></feColorMatrix>
+              </filter>
+            </defs>
+            <g
+              id="Artboard"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g id="logo" transform="translate(2.000000, 4.000000)">
+                <g id="Group">
+                  <g id="Rectangle-Copy-8" fill-rule="nonzero">
+                    <use
+                      fill="black"
+                      fill-opacity="1"
+                      filter="url(#filter-2)"
+                      xlink:href="#path-1"
+                    ></use>
+                    <use fill="#FC6061" xlink:href="#path-1"></use>
+                  </g>
+                  <g id="Rectangle-Copy-9" fill-rule="nonzero">
+                    <use
+                      fill="black"
+                      fill-opacity="1"
+                      filter="url(#filter-4)"
+                      xlink:href="#path-3"
+                    ></use>
+                    <use fill="#69D7C7" xlink:href="#path-3"></use>
+                  </g>
+                  <g id="Rectangle-Copy-12" fill-rule="nonzero">
+                    <use
+                      fill="black"
+                      fill-opacity="1"
+                      filter="url(#filter-6)"
+                      xlink:href="#path-5"
+                    ></use>
+                    <use fill="#7E4E76" xlink:href="#path-5"></use>
+                  </g>
+                  <text
+                    id="1"
+                    font-family="Barlow-SemiBold, Barlow"
+                    font-size="50"
+                    font-weight="500"
+                    fill="#FFFFFF"
+                  >
+                    <tspan x="29.475" y="56">1</tspan>
+                  </text>
+                  <text
+                    id="to"
+                    font-family="Barlow-SemiBold, Barlow"
+                    font-size="50"
+                    font-weight="500"
+                    fill="#FFFFFF"
+                  >
+                    <tspan x="104.975" y="55">to</tspan>
+                  </text>
+                  <text
+                    id="100"
+                    font-family="Barlow-SemiBold, Barlow"
+                    font-size="44"
+                    font-weight="500"
+                    fill="#FFFFFF"
+                  >
+                    <tspan x="182.506" y="55">100</tspan>
+                  </text>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <p class="c-logo--desc">
+            simple brain-traning game to help you concentrate
+          </p>
+        </div>
+        <ul class="c-home-menu">
+          <li class="c-home-menu__item button" onclick="routeTo('play.html')">
+            play
+          </li>
+          <li class="c-home-menu__item button" onclick="routeTo('score.html')">
+            score
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <!-- Landscape View -->
+    <div class="l-orientation--landscape">
+      <h2>please rotate your device to begin the game!</h2>
+      <div class="c-rotating-anim">
+        <svg
+          class="c-rotating-anim__group"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 340 340"
+        >
+          <circle cx="170" cy="170" r="160" stroke="#69D7C7" />
+          <circle cx="170" cy="170" r="135" stroke="#FC6061" />
+          <circle cx="170" cy="170" r="110" stroke="#7E4E76" />
+        </svg>
+      </div>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script>
+      // Customize config var BEFORE loading add2Home.js
+      var addToHomeConfig = {
+        touchIcon: true
+      };
+    </script>
+    <script src="dist/js/add2home.js"></script>
+    <script src="dist/js/app.js"></script>
+  </body>
+</html>
