@@ -1,85 +1,169 @@
-// Save initial scores array to localStorage
-//var scores = new Array(4);
-var scores = [
-    {'date':'11/12/18', 'score':'05:33'},
-    {'date':'11/13/18', 'score':'08:33'}
-];
-//localStorage.setItem('scores', scores);
+/**
+ * Funtion to populate past top scores
+ */
+function loadScores() {
+  // Load curret score and history
+  loadCurrentScore();
+  loadScoreHistory();
+}
 
 /**
- * Init() function to display current score and
- * set top score of the day on page load
+ * Funtion to display current score (for game you just played)
  */
-var topScore = 0;
-function init() {
-  var temp = localStorage.getItem("currentScore");
-  if (!temp) {
+function loadCurrentScore() {
+  var temp = parseInt(localStorage.getItem("currentScore"));
+  if (temp == 0) {
     document.querySelector(".c-score--title").innerHTML =
       "you didn't concentrate today";
     document.querySelector(".c-score--info--record").innerHTML = "concentrate!";
   } else {
-    localStorage.removeItem("currentScore");
+    console.log(temp);
     var currentScore = formatScore(temp);
 
     // Display score
     var currentScoreBoard = document.querySelector(".c-score--info--record");
     currentScoreBoard.innerHTML = currentScore;
 
-    // Compare and set top score for today
-    if (temp > topScore) {
-      topScore = temp;
+    // Compare with current score with today's top score
+    // and update the record/history accordingly
+    updateScoreHistory(temp);
+    
+}
 
-      // Get formatted today's date to be stored
-      var date = new Date();
-      var todayDate =
-        date.getMonth() +
-        "/" +
-        date.getDate() +
-        "/" +
-        date
-          .getFullYear()
-          .toString()
-          .substr(-2);
+/**
+ * Funtion to set today's top score and update score history accordingly
+ * @param {int} temp - unformatted score in time (in seconds)
+ */
+function updateScoreHistory(temp) {
+  var scores = getScoreData();
+  var currentScore = formatScore(temp);
 
-      // Store today's top score and date, so they can be displayed as past scores
-      /* var yesterdayScore = { topScore, todayDate };
-      localStorage.setItem("yesterdayScore", yesterdayScore); */
+    // Get formatted today's date to be stored
+    var date = new Date();
+    var todayDate =
+      date.getMonth() +
+      "/" +
+      date.getDate() +
+      "/" +
+      date
+        .getFullYear()
+        .toString()
+        .substr(-2);
+
+    // Compare date with the latest date in score history 
+    // When there is score history
+    if (scores.length != 0) {
+      //console.log(scores.length);
+      if (scores[scores.length - 1].date == todayDate) {
+        // Compare with current top score and update new top score
+        var rawTopScore = scores[scores.length - 1].rawScore;
+        if(temp<rawTopScore){
+          scores[scores.length - 1].score = currentScore;
+          scores[scores.length - 1].rawScore = temp;
+        }
+      } else {
+        // If not, add as a new top score
+        todayTopScore = {
+          date: todayDate,
+          score: currentScore,
+          rawScore: temp
+        };
+        scores.push(todayTopScore);
+      }
+    } else {
+      // When there is no score history, just add to the array/score history
+      todayTopScore = {
+        date: todayDate,
+        score: currentScore,
+        rawScore: temp
+      };
+      scores.push(todayTopScore);
+    }
+
+    // Update score history with updated array
+    localStorage.setItem("scores", JSON.stringify(scores));
+
+    // reset current score for next visit to score page
+    localStorage.setItem("currentScore", "0");
+}
+}
+
+/**
+ * Funtion to load score history for past four days
+ */
+function loadScoreHistory() {
+  var scoreGroup = document.querySelector(".c-rank");
+  var scores = getScoreData();
+  console.log(scores.length);
+  var scoreHistory = "";
+
+  if (scores.length < 4) {
+    // If there is less than four data in score history
+    for (var i = 3; i >= 0; i--) {
+      if (i >= scores.length) {
+        scoreHistory +=
+          '<li class="c-rank__item c-rank--fourth shadow button">\
+                        <p class="c-rank__item__record">no record</p>\
+                        </li>';
+      } else {
+        var date = scores[i].date;
+        var score = scores[i].score;
+
+        scoreHistory +=
+          '<li class="c-rank__item c-rank--fourth shadow button">\
+                        <p class="c-rank__item__date">' +
+          date +
+          '</p>\
+                        <p class="c-rank__item__record">' +
+          score +
+          "</p>\
+                        </li>";
+      }
+    }
+  } else {
+    for (var i = scores.length - 1; i >= scores.length - 4; i--) {
+      console.log("index:" + i);
+      var date = scores[i].date;
+      var score = scores[i].score;
+
+      // If no score record, display no record
+      if (date == undefined) {
+        scoreHistory +=
+          '<li class="c-rank__item c-rank--fourth shadow button">\
+                        <p class="c-rank__item__record">no record</p>\
+                        </li>';
+      } else {
+        // If score record exist, then display with correct date and score
+        scoreHistory +=
+          '<li class="c-rank__item c-rank--fourth shadow button">\
+                        <p class="c-rank__item__date">' +
+          date +
+          '</p>\
+                        <p class="c-rank__item__record">' +
+          score +
+          "</p>\
+                        </li>";
+      }
     }
   }
 
-  // If today's date is different from 'yesterdayScore', add yesterday record to scores array
-  /* if (todayDate.localeCompare(yesterdayScore[1])) {
-    if (scores.length > 4) {
-      scores.push(yesterdayScore);
-    } else {
-      scores.pop(scores[0]);
-      scores.push(yesterdayScore);
-    }
-  } */
-  // Populate past scores
-  populateScores();
+  // Replace current score history with updated one
+  scoreGroup.innerHTML = scoreHistory;
 }
 
-init();
-
 /**
- * Funtion to populate past top scores
+ * This will parse score history from localStorage
  */
-function populateScores() {
-  var yesterdayScore = localStorage.getItem("yesterdayScore");
-  var pastScoreBoards = document.querySelectorAll(".c-rank__item__record");
-  /* var pastScores = JSON.parse(localStorage.getItem("scores"));
+function getScoreData() {
+  var scores = localStorage.getItem("scores");
+  var parsedScores = JSON.parse(scores);
 
-  if (yesterdayScore) {
-    for (var i = 0, j=pastScores.length; j >= 0; i++, j--) {
-        pastScoreBoards[i].innerHTML = pastScores[j].score;
-    }
-  } else {
-  } */
+  return parsedScores;
 }
 
 /**
- * Funcion to format and return score in proper format
+ * Funcion to format and return score (in time) in proper format
+ * @param {int} scoreInSec - timer value in seconds
  */
 function formatScore(scoreInSec) {
   var minuteNum = Math.floor(scoreInSec / 60);

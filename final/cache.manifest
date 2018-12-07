@@ -1,0 +1,33 @@
+CACHE MANIFEST
+# v1 - 2018-12-07
+
+CACHE:
+
+# HTML FILES
+index.html
+play.html
+score.html
+
+# CSS
+dist/css/add2home.css
+dist/css/app.css
+dist/css/normalize.css
+
+# JAVASCRIPT - SPECIFIC ORDER
+dist/js/add2home.js
+dist/js/app.js
+dist/js/play.js
+dist/js/score.js
+
+# IMAGES
+dist/img/splashscreens/iphone5_splash.png
+dist/img/splashscreens/iphone6_splash.png
+dist/img/splashscreens/iphoneplus_splash.png
+dist/img/splashscreens/iphonex_splash.png
+dist/img/splashscreens/iphonexr_splash.png
+dist/img/splashscreens/iphonexsmax_splash.png
+dist/img/apple-touch-icon-120x120.png
+dist/img/apple-touch-icon-152x152.png
+dist/img/apple-touch-icon-167x167.png
+dist/img/apple-touch-icon-180x180.png
+dist/img/favicon.ico

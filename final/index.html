@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="cache.manifest">
   <head>
-    <title>IDM361 HW05 | 1 to 100</title>
+    <title>IDM361 FINAL | 1 to 100</title>
     <!-- META -->
     <meta charset="utf-8" />
     <meta
@@ -62,6 +62,11 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
+      href="dist/img/apple-touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
       href="dist/img/apple-touch-icon-180x180.png"
     />
 
@@ -107,7 +112,7 @@
     <link href="dist/css/app.css" rel="stylesheet" />
   </head>
 
-  <body class="c-body">
+  <body class="c-body" onload="checkFirstLaunch()">
     <!-- Portrait View -->
     <div class="l-orientation--portrait c-page">
       <main class="l-wrapper c-main">

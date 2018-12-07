@@ -2,18 +2,22 @@ var gameBoard;
 var gameBoardSize;
 var game;
 
-function init() {
+function loadGame() {
   //console.log('Init Called');
+  // Retreive game board data
   gameBoard = document.querySelectorAll(".c-game__box__number");
   gameBoardSize = gameBoard.length;
-  initiateGame();
+  
+  // Initate timer
   initiateTimer();
+  
+  // Prepare game board for game to begin
+  fillBoard(1);
 }
-
-init();
 
 /**
  * Function to randomize/shuffle the numbers
+ * @param {Array} array - array of numbers to be displayed in game board
  */
 function shuffle(array) {
   var currentIndex = array.length,
@@ -37,6 +41,7 @@ function shuffle(array) {
 
 /**
  * Function fill board from updated and shuffled array
+ * @param {int} startingNum - number to start filling game board from
  */
 function fillBoard(startingNum) {
   array = [];
@@ -48,13 +53,6 @@ function fillBoard(startingNum) {
   for (var i = 0; i < gameBoardSize; i++) {
     gameBoard[i].innerHTML = array[i];
   }
-}
-
-/**
- * Function to initiate the game
- */
-function initiateGame() {
-  fillBoard(1);
 }
 
 /**
@@ -76,15 +74,15 @@ function shuffleGame() {
 
 /**
  * Function to shuffle and fill gameboard when clicked correctly
+ * @param {int} selectedButton - actual value of the clicked number button
  */
 var correctNum = 1;
 function validateNum(selectedButton) {
-  // Get the child node - actual number para -
+  // Get the child node
   var selectedNum = selectedButton.children[0].innerHTML;
 
   if (correctNum == selectedNum) {
-    if (correctNum == 2) {
-      /******************************************** change it after testing */
+    if (correctNum == 2) { // ******* setting value for game goal
       saveRecord();
     } else {
       // Increment for next validation + fill in process
@@ -128,6 +126,7 @@ function saveRecord() {
 
 /**
  * Funcion to format and return score in proper format
+ * @param {int} scoreInSec - timer value in seconds
  */
 function formatScore(scoreInSec) {
   var minuteNum = Math.floor(scoreInSec / 60);
