@@ -1,7 +1,5 @@
 # 1 to 100
 
-**A simple brain-training game to help you concentrate!**
-
 This is the final project for IDM361: Interactive App Design I
 
 The main goal of the game is to help you build your concentration as completing a simple task of reaching from 1 to 100.
