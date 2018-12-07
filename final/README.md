@@ -1,6 +1,6 @@
 # 1 to 100
 
-** A simple brain-training game to help you concentrate! **
+**A simple brain-training game to help you concentrate!**
 
 This is the final project for IDM361: Interactive App Design I
 
