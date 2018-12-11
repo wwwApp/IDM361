@@ -82,7 +82,7 @@ function validateNum(selectedButton) {
   var selectedNum = selectedButton.children[0].innerHTML;
 
   if (correctNum == selectedNum) {
-    if (correctNum == 2) { // ******* setting value for game goal
+    if (correctNum == 100) { // ************************************* setting value for game goal
       saveRecord();
     } else {
       // Increment for next validation + fill in process

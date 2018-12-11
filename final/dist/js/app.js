@@ -41,6 +41,7 @@ function checkFirstLaunch() {
       }
     ]; */
     localStorage.setItem('scores', '[]');
+    localStorage.setItem('currentScore', '0');
   }else {
     // Browser does not support local storage
     alert("This browser does NOT support local storage");

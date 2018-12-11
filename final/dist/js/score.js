@@ -14,10 +14,10 @@ function loadCurrentScore() {
   var temp = parseInt(localStorage.getItem("currentScore"));
   if (temp == 0) {
     document.querySelector(".c-score--title").innerHTML =
-      "you didn't concentrate today";
+      "it seems like you need to";
     document.querySelector(".c-score--info--record").innerHTML = "concentrate!";
   } else {
-    console.log(temp);
+    //console.log(temp);
     var currentScore = formatScore(temp);
 
     // Display score
@@ -94,7 +94,7 @@ function updateScoreHistory(temp) {
 function loadScoreHistory() {
   var scoreGroup = document.querySelector(".c-rank");
   var scores = getScoreData();
-  console.log(scores.length);
+  //console.log(scores.length);
   var scoreHistory = "";
 
   if (scores.length < 4) {
@@ -122,7 +122,7 @@ function loadScoreHistory() {
     }
   } else {
     for (var i = scores.length - 1; i >= scores.length - 4; i--) {
-      console.log("index:" + i);
+      //console.log("index:" + i);
       var date = scores[i].date;
       var score = scores[i].score;
 

@@ -11,3 +11,8 @@ It's simple, but challenging!
 Your task is to click numbers in order until you reach 100. However, numbers will stay neither in order or in the same position, your task is also to find the appropriate next number in a randomized set of numbers.
 
 Don't forget your chance to refresh numbers if you're stuck!
+
+## Project Features
+- Shuffle numbers on each correct click & 'Shuffle' button
+- Record play time
+- Display past four top play record
